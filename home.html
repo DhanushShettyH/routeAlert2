@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="http://ras.technomediasoft.com:8080/ra/styles.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <title>RouteAlert</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f8f8; /* Off-white background color */
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #1e90ff; /* Dodger Blue header color */
+      }
+
+      .info-container {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+
+        padding: 15px;
+        color: #333; /* Dark text color */
+      }
+      .info {
+        max-width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 15px;
+        color: #333; /* Dark text color */
+      }
+      .info > * {
+        margin-bottom: 11px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: #333; /* Dark text color */
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #1e90ff; /* Dodger Blue header color */
+        color: #fff;
+      }
+
+      button.url-button {
+        background-color: #1e90ff; /* Dodger Blue button color */
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button.url-button:hover {
+        background-color: #007acc; /* Darker Dodger Blue on hover */
+      }
+
+      button.refresh-button,
+      button.whatsapp-button {
+        background-color: #333; /* Dark button color */
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      button.refresh-button:hover,
+      button.whatsapp-button:hover {
+        background-color: #555; /* Darker button color on hover */
+      }
+
+      #map {
+        margin-bottom: 20px;
+        height: 350px;
+      }
+
+      script {
+        display: none;
+      }
+      strong,
+      p {
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body onload="getmap()">
+    <section>
+      <h1>RouteAlert</h1>
+      <!-- OpenStreetMap viewport -->
+      <div id="map"></div>
+
+      <div class="info">
+        <div>
+          <strong id="vehicleName"></strong>
+        </div>
+
+        <div>
+          <strong>Speed:</strong>
+          <p id="speed"></p>
+        </div>
+        <div>
+          <strong>Facing </strong>
+          <p id="facing"></p>
+        </div>
+        <div>Last Seen @ <strong id="lastSeen"></strong></div>
+        <div>Near: <strong id="near"></strong></div>
+        <div>
+          <p id="address"></p>
+        </div>
+        <button class="url-button" onclick="openUrl()">Show Map</button>
+      </div>
+
+      <!-- Dynamic table for crossed stops -->
+      <table>
+        <thead>
+          <tr>
+            <th>Crossed Stop</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="crossed-stops">
+          <!-- Data will be populated dynamically using JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- Buttons for page refresh and WhatsApp sharing -->
+
+      <button class="refresh-button" onclick="refreshPage()">
+        Refresh Page
+      </button>
+      <button class="whatsapp-button" onclick="shareOnWhatsApp()">
+        Share on WhatsApp
+      </button>
+    </section>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="logic.js">
+
+
+
+      //function to fetch coordinates
+    </script>
+
+    <!-- Date and time stamp -->
+    <p>Last updated: <span id="timestamp"></span></p>
+
+    <script>
+      // JavaScript to add date and time stamp
+      document.getElementById("timestamp").innerText =
+        new Date().toLocaleString();
+    </script>
+  </body>
+</html>

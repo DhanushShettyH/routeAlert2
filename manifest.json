@@ -1,0 +1,19 @@
+	  {
+		"id":"/routeAlert/index.html",
+		"name":"Route Alert",
+		"short_name":"RouteAlert",
+		"start_url":"index.html",
+		"display":"standalone",
+		"background_color":"#1E90FF",
+		"theme_color":"black",
+		"scope": ".",
+		"description":"This is a routealert.",
+		"icons":[
+			{
+				"src": "./logo512.png",
+				"sizes": "512X512",
+				"type": "image/png"
+			  }
+	]
+	}
+	
