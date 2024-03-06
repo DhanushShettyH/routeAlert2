@@ -247,7 +247,7 @@
               id="finishBtn"
               style="display: none"
               onclick="isinstalled()"
-              data-dismiss="modal"
+			  data-dismiss="modal"
             >
               Finish
             </button>
@@ -276,13 +276,11 @@
 
       var deferredPrompt;
       const installApp = document.getElementById("installApp");
-      const isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(
-        navigator.userAgent
-      );
+	  const isSafari = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent);
+
 
       //if (isSafari) {
       if (isSafari) {
-        console.log(isSafari);
         if (!localStorage.getItem("isinstalled")) {
           const displayButton = document.getElementById("displayButton");
           const displayText = document.getElementById("displayText");
