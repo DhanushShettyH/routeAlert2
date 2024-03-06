@@ -6,8 +6,12 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         return cache.addAll([
-          '/',
-        
+          '/home.html',
+          '/index.html',
+          '/logic.js',
+          '/manifest.json',
+          '/styles.css',
+          '/image.png',
         ]);
       })
   );

@@ -9,6 +9,7 @@
       href="http://ras.technomediasoft.com:8080/ra/styles.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="manifest" href="manifest.json" />
 
     <title>RouteAlert</title>
     <style>
@@ -178,6 +179,20 @@
       // JavaScript to add date and time stamp
       document.getElementById("timestamp").innerText =
         new Date().toLocaleString();
+      window.addEventListener("load", () => {
+        registerSW();
+      });
+
+      // Register the Service Worker
+      async function registerSW() {
+        if ("serviceWorker" in navigator) {
+          try {
+            await navigator.serviceWorker.register("sw.js");
+          } catch (e) {
+            console.log("SW registration failed");
+          }
+        }
+      }
     </script>
   </body>
 </html>

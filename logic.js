@@ -148,3 +148,13 @@ function shareOnWhatsApp() {
   // Open WhatsApp link in a new window
   window.open(whatsappLink);
 }
+
+
+
+
+//store isinstalled in localstorage for ios (safari)
+function isinstalled(){
+	localStorage.setItem("isinstalled",true);
+	window.location.reload();
+
+}
